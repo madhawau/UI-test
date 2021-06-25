@@ -1,0 +1,25 @@
+.my-pagination {
+    text-align: center;
+    .ngx-pagination {
+        margin-top: 30px;
+        .current {
+            @include button-bg($btn-primary);
+            border-radius: 3px;
+            span {
+                color: $color-white;
+                font-size: 0.875rem;
+                font-weight: $font-weight-bold;
+            }
+        }
+        a:hover {
+            border-radius: 3px;
+        }
+    }
+}
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before,
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+    display: none !important;
+}

@@ -1,0 +1,13 @@
+//Settings
+@import 'src/scss/color.settings';
+@import 'src/scss/font.settings';
+@import 'src/scss/global.settings';
+//Mixing
+@import 'src/scss/mixing';
+//Components
+@import 'src/scss/components/buttons.component';
+@import 'src/scss/components/navbar.component';
+@import 'src/scss/components/notice.component';
+@import 'src/scss/components/movie-card.component';
+@import 'src/scss/components/accordion.component';
+@import 'src/scss/components/pagination.component';

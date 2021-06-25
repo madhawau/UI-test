@@ -1,0 +1,18 @@
+.notice-boared {
+    padding: 40px 20px;
+    background: $notice-board;
+    border: 1px solid $color-border;
+    text-align: center;
+    margin-top: 40px;
+    &__text {
+        margin: 0;
+        font-weight: $font-weight-bold;
+    }
+    &.error {
+        background: rgba($color: $error, $alpha: .1);
+        border: 1px dashed $error;
+        .notice-boared__text {
+            color: $error;
+        }
+    }
+}

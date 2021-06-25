@@ -1,0 +1,45 @@
+.main-nav__wrapper {
+    background: $color-white;
+    @include box-shadow(0, 3px, 5px, $color-border);
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+}
+
+.main-nav {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    &__brand {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+        @include breakpoint(xs, max-width) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.main-search {
+    display: flex;
+    align-items: flex-end;
+    &__label {
+        font-size: 00.875rem;
+        margin-right: 10px;
+        font-weight: $font-weight-normal;
+        @include breakpoint(sm, max-width) {
+            display: none;
+        }
+    }
+    &__input {
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: $color-border;
+        margin-right: 10px;
+        outline: none;
+        font-weight: $font-weight-normal;
+        @include breakpoint(xs, max-width) {
+            width: 70px;
+        }
+    }
+}

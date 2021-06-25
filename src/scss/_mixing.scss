@@ -1,0 +1,45 @@
+//box-shadow
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $default) {
+    box-shadow: $x-axis $y-axis $blur $color;
+}
+
+//buttons
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+        background: darken($bg, 8%);
+        transition: background 0.3s ease;
+    }
+    &:active {
+        background: darken($bg, 25%);
+    }
+}
+
+//breakpoints
+@mixin breakpoint($point, $min-or-max: min-width) {
+    @if $point=="lg" {
+        @media ($min-or-max: 1399px) {
+            @content;
+        }
+    }
+    @else if $point=="md" {
+        @media ($min-or-max: 1128px) {
+            @content;
+        }
+    }
+    @else if $point=="sm" {
+        @media ($min-or-max: 767px) {
+            @content;
+        }
+    }
+    @else if $point=="xs" {
+        @media ($min-or-max: 480px) {
+            @content;
+        }
+    }
+    @else {
+        @media ($min-or-max: $point) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<div class="container margin-top">
+
+
+    <div class="card-wrapper" *ngIf="movie && movie.Search">
+        <div *ngFor="let response of movie.Search | paginate: {
+            itemsPerPage: 6, 
+            currentPage: page, 
+            totalItems: totalLength }" class="card" [ngClass]="{'is-open': response.classToggled}">
+            <div class="card__img-wrap">
+                <img class="card__img" src="{{response.Poster}}">
+            </div>
+            <div class="card__info">
+                <p class="card__title">{{ response.Title }}</p>
+                <p>{{response.totalResults}}</p>
+                <div class="accordion" [ngClass]="{'is-open': response.classToggled}">
+                    <p class="card__sub-title">Plot</p>
+                    <p class="card__detail">is simply dummy text of the printing and typesetting industry</p>
+                    <p class="card__sub-title">Actors</p>
+                    <p class="card__detail">is simply dummy text of the printing</p>
+                    <p class="card__sub-title">Ratings</p>
+                    <ul class="card__rating">
+                        <li class="card__list">is simply dummy text</li>
+                        <li class="card__list">is simply dummy text</li>
+                        <li class="card__list">is simply dummy</li>
+                    </ul>
+                </div>
+                <div class="card__footer">
+                    <p class="card__year">{{ response.Year }}</p>
+                    <button class="btn btn-primary" role="button" (click)="toggleField(response)">details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notice-boared error" *ngIf="movie && movie.Response == 'False'">
+        <p class="notice-boared__text">No movies found</p>
+    </div>
+
+    <div *ngIf="movie && movie.Response == 'True'">
+        <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+    </div>
+
+</div>

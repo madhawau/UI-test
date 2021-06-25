@@ -1,0 +1,16 @@
+.btn {
+    color: $color-white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.875rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    border: 1px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    @include button-bg($btn-primary);
+}
